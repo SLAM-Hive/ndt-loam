@@ -1,0 +1,77 @@
+slam-hive-algorithm: ndt-loam
+slam-hive-dataset: kitti_2011_09_30_drive_0027_synced_full
+algorithm-parameters:
+  enable_floor_detection: false
+  enable_gps: false
+  enable_imu_acc: true
+  enable_imu_ori: true
+  base_link_frame: base_link
+  use_distance_filter: true
+  distance_near_thresh: 0.5
+  distance_far_thresh: 100.0
+  downsample_method: VOXELGRID
+  downsample_resolution: 0.1
+  outlier_removal_method: RADIUS
+  statistical_mean_k: 30
+  statistical_stddev: 1.2
+  radius_radius: 0.5
+  radius_min_neighbors: 5
+  use_angle_calibration: false
+  odom_frame_id: odom
+  calib_file: /home/chenshoubin/slam_ws/src/lv_slam/config/kitti_calib/calib04-12.txt
+  keyframe_delta_trans: 10.0
+  keyframe_delta_angle: 0.17
+  keyframe_delta_time: 1.0
+  scan_line: 64
+  mapping_skip_frame: 1
+  minimum_range: 5
+  mapping_line_resolution: 0.4
+  mapping_plane_resolution: 0.8
+  seq: 04
+  lfa_output_path: /home/chenshoubin/slam_ws/src/lv_slam/data/kitti_lv_dlo_lfa_ggo
+  g2o_solver_type: lm_var_cholmod
+  g2o_solver_num_iterations: 1024
+  distance_thresh: 20.0
+  accum_distance_thresh: 100.0
+  min_edge_interval: 50.0
+  fitness_score_thresh: 2.0
+  registration_method: NDT_OMP
+  ndt_resolution: 1.0
+  ndt_num_threads: 8
+  ndt_nn_search_method: DIRECT7
+  gps_edge_robust_kernel: Huber
+  gps_edge_robust_kernel_size: 1.0
+  gps_edge_stddev_xy: 20.0
+  gps_edge_stddev_z: 5.0
+  imu_orientation_edge_robust_kernel: Huber
+  imu_orientation_edge_stddev: 1.0
+  imu_acceleration_edge_robust_kernel: Huber
+  imu_acceleration_edge_stddev: 1.0
+  floor_edge_robust_kernel: Huber
+  floor_edge_stddev: 1.0
+  odometry_edge_robust_kernel: Huber
+  odometry_edge_robust_kernel_size: 1.0
+  loop_closure_edge_robust_kernel: Huber
+  loop_closure_edge_robust_kernel_size: 1.0
+  use_const_inf_matrix: true
+  const_stddev_x: 0.5
+  const_stddev_q: 0.1
+  var_gain_a: 20.0
+  min_stddev_x: 0.1
+  max_stddev_x: 5.0
+  min_stddev_q: 0.05
+  max_stddev_q: 0.2
+  graph_update_interval: 10.0
+  max_keyframes_per_update: 20
+  map_cloud_update_interval: 10.0
+  map_cloud_resolution: 0.5
+dataset-parameters:
+algorithm-remap:
+  pointcloud_topic: /points_raw
+  imu_topic: /imu_raw
+dataset-remap:
+dataset-frequency:
+dataset-resolution:
+general-parameter:
+algorithm-attribute: 
+dataset-attribute: 
